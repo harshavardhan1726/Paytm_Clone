@@ -10,16 +10,15 @@ const { JWT_SECRET } = require('../config')
 const signupBody = zod.object({
     username: zod.string().email(),
     firstName: zod.string(),
-    lastname: zod.string(),
+    lastName: zod.string(),
     password: zod.string()
 })
 
 router.post('/signup', async (req, res) => {
     const { success } = signupBody.safeParse(req.body)
-
     if (!success) {
         return res.status(411).json({
-            message: "Email already taken / Incorrect inputs"
+            message: "Email already taken / Incorrect inputs1"
         })
     }
 
@@ -29,7 +28,7 @@ router.post('/signup', async (req, res) => {
 
     if (existingUser) {
         return res.status(411).json({
-            message: "Email already taken / Incorrect inputs"
+            message: "Email already taken/Incorrect inputs"
         })
     }
 
@@ -39,8 +38,7 @@ router.post('/signup', async (req, res) => {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
     })
-
-    const userId = user._id
+    const userId = user._id;
 
     await Account.create({
         userId,

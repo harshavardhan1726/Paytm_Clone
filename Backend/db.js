@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 
-mongoose.connect('mongodb+srv://harsha1234:Sm93YBjSzh9Uu1BH@cluster0.dqj69kc.mongodb.net/Paytm/')
+mongoose.connect('mongodb+srv://harsha1234:Sm93YBjSzh9Uu1BH@cluster0.dqj69kc.mongodb.net/Paytm')
 
 const userSchema = new Schema({
     username: {
@@ -35,7 +35,7 @@ const userSchema = new Schema({
 
 const accountSchema = new Schema({
     userId: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'User',
         required: true
     },

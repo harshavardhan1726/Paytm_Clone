@@ -5,8 +5,8 @@ const accoutRouter = require('./account')
 
 const router = express.Router()
 
-router.get('/user', userRoute )
-router.get('/account', accoutRouter )
+router.use('/user', userRoute )
+router.use('/account', accoutRouter )
 
 
 module.exports = router

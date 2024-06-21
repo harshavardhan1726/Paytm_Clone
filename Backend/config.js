@@ -1,3 +1,3 @@
-const JWT_SECRET = "harshasecretpasswd"
-
-module.exports = JWT_SECRET
+module.exports = {
+	JWT_SECRET: "kasduhgjkf"
+}
